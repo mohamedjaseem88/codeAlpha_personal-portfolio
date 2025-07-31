@@ -1,0 +1,248 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #1e1e2f, #121212);
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(2px);       
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+}
+
+.nav-links a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #00bcd4;
+  padding-bottom: 2px;
+}
+
+
+.hero {
+  text-align: center;
+  padding: 80px 0;
+  background: #111;
+  animation: fadeInDown 1s ease-out;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+section {
+  animation: fadeIn 1s ease-in;
+}
+
+.about, .skills, .projects, .contact {
+  background: #1e1e2f;
+  margin: 20px 0;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #00bcd4;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: \"•\";
+  color: #00bcd4;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+.project-card h3 {
+  color: #00bcd4;
+  margin-top: 0;
+}
+
+.project-card p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.3);
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #00bcd4;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #00acc1;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: #00bcd4;
+  border: 1px solid #00bcd4;
+}
+
+.btn.secondary:hover {
+  background-color: #00bcd4;
+  color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #000;
+  color: #666;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skills {
+  padding: 60px 0;
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00bcd4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.skill-item {
+  background: rgba(0, 188, 212, 0.08);
+  border: 1px solid #00bcd4;
+  border-radius: 10px;
+  padding: 20px 10px;
+  color: #00bcd4;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideFade 0.7s ease forwards;
+}
+
+.skill-item:hover {
+  background: #00bcd4;
+  color: #000;
+  transform: translateY(0) scale(1.05);
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skill-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
